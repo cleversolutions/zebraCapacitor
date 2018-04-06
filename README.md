@@ -7,4 +7,4 @@ Also, the Android implementation is not yet tested and likely missing important 
 Also this is built using the alpha version of Capacitor
 
 ## But
-I do intend to develop and support an app whihc uses this plugin, so this will eventually be completed and working (at least with for the printers I have access to test with)
+I do intend to develop and support an app that uses this plugin, so this will eventually be completed and working (at least with for the printers I have access to test with).
