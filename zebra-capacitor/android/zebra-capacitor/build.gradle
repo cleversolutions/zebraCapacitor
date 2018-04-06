@@ -46,5 +46,8 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    implementation files('libs/ZSDK_ANDROID_API.jar')
+    implementation files('libs/snmp6_1.jar')
+    implementation files('libs/opencsv-2.2.jar')
 }
 
