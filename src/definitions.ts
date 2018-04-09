@@ -1,9 +1,23 @@
 declare global {
   interface PluginRegistry {
-    EchoPlugin?: EchoPlugin;
+    ZebraPrinter?: ZebraPlugin;
   }
 }
 
-export interface EchoPlugin {
-  echo(options: { value: string }): Promise<{value: string}>;
+export interface Printer {
+  name: string;
+  address: string;
 }
+
+export interface DiscoveryResult {
+  printers: Array<Printer>;
+}
+
+export interface ZebraPlugin {
+  print(args: any): Promise<any>;
+  isConnected(): Promise<boolean>;
+  connect(args: any): Promise<boolean>;
+  disconnect(): Promise<boolean>;
+  discover(): Promise<DiscoveryResult>;
+}
+

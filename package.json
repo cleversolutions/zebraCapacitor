@@ -1,7 +1,7 @@
 {
   "name": "zebra-capacitor",
   "version": "0.0.1",
-  "description": "Capacitor plugin for Zebra printers (ios and android)",
+  "description": "Capacitor plugin for Zebra printers (ios and android). Very experimental. iOS not yet implemented. Android not yet tested.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
