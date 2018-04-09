@@ -1,1 +1,5 @@
 /node_modules
+/android/zebra-capacitor/.gradle
+/android/zebra-capacitor/.idea
+/android/zebra-capacitor/build
+/android/zebra-capacitor/gradle
