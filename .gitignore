@@ -4,3 +4,4 @@
 /android/zebra-capacitor/build
 /android/zebra-capacitor/gradle
 /dist
+package-lock.json
