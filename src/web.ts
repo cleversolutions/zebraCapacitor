@@ -1,6 +1,8 @@
 import { WebPlugin } from '@capacitor/core';
 import { ZebraPlugin, DiscoveryResult } from '.';
 
+//This is just stubbed in here for now, but as crazy as it sounds web implementation may be possible
+//https://developers.google.com/web/updates/2015/07/interact-with-ble-devices-on-the-web
 export class ZebraPluginWeb extends WebPlugin implements ZebraPlugin {
   constructor() {
     super({
