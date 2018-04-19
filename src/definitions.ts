@@ -20,4 +20,3 @@ export interface ZebraPlugin {
   disconnect(): Promise<boolean>;
   discover(): Promise<DiscoveryResult>;
 }
-
