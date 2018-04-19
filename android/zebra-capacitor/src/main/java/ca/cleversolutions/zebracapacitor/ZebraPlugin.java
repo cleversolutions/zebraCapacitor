@@ -1,4 +1,4 @@
-package ca.cleversolutions.capacitor.zebra;
+package ca.cleversolutions.zebracapacitor;
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothClass;
