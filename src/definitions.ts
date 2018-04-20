@@ -14,9 +14,9 @@ export interface DiscoveryResult {
 }
 
 export interface ZebraPlugin {
-  print(args: any): Promise<any>;
+  print(options: { cpcl: string }): Promise<any>;
   isConnected(): Promise<boolean>;
-  connect(args: any): Promise<boolean>;
+  connect(options: { MACAddress: string }): Promise<boolean>;
   disconnect(): Promise<boolean>;
   discover(): Promise<DiscoveryResult>;
 }

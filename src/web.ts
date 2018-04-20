@@ -10,16 +10,16 @@ export class ZebraPluginWeb extends WebPlugin implements ZebraPlugin {
       platforms: ['web']
     });
   }
-  print(cpcl: string): Promise<any> {
-    console.log("ZebraPluginWeb::print", cpcl);
+  print(options: { cpcl: string }): Promise<any> {
+    console.log("ZebraPluginWeb::print", options.cpcl);
     return Promise.reject("Feature not Implemented");
   }
   isConnected(): Promise<boolean> {
     console.log("ZebraPluginWeb::isConnected");
     return Promise.reject("Feature not Implemented");
   }
-  connect(MACAddress: string): Promise<any> {
-    console.log("ZebraPluginWeb::connect", MACAddress);
+  connect(options: { MACAddress: string }): Promise<any> {
+    console.log("ZebraPluginWeb::connect", options.MACAddress);
     return Promise.reject("Feature not Implemented");
   }
   disconnect(): Promise<boolean> {
