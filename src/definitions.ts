@@ -1,6 +1,6 @@
 declare global {
   interface PluginRegistry {
-    ZebraPlugin?: ZebraPlugin;
+    ZebraPlugin?: IZebraPlugin;
   }
 }
 
@@ -13,7 +13,7 @@ export interface DiscoveryResult {
   printers: Array<Printer>;
 }
 
-export interface ZebraPlugin {
+export interface IZebraPlugin {
   print(options: { cpcl: string }): Promise<any>;
   isConnected(): Promise<boolean>;
   connect(options: { MACAddress: string }): Promise<boolean>;
