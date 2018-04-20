@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.id="zebra-capacitor" external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$" external.system.id="GRADLE" type="JAVA_MODULE" version="4">
+<module external.linked.project.id=":zebra-capacitor" external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$/../../../../android" external.system.id="GRADLE" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="android-gradle" name="Android-Gradle">
       <configuration>
-        <option name="GRADLE_PROJECT_PATH" value=":" />
+        <option name="GRADLE_PROJECT_PATH" value=":zebra-capacitor" />
       </configuration>
     </facet>
     <facet type="android" name="Android">
@@ -71,13 +71,6 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/rs" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/shaders" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/res" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/assets" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/aidl" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/rs" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/shaders" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/res" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/resources" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/assets" type="java-test-resource" />
@@ -85,6 +78,13 @@
       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/rs" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/shaders" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/res" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/assets" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/aidl" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/rs" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/shaders" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/annotations" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/attr" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/blame" />
@@ -96,14 +96,12 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/javaPrecompile" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/jniLibs" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/library_and_local_jars_jni" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/lint" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/manifests" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/packaged-aidl" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/packaged-classes" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/packagedAssets" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/packaged_res" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/public_res" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/publish-proguard" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/res" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/rs" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/shaders" />
@@ -117,10 +115,10 @@
     <orderEntry type="jdk" jdkName="Android API 27 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="com.android.support:animated-vector-drawable-27.1.1" level="project" />
-    <orderEntry type="library" name="__local_aars__:C.\Users\evanm\dev\zebraCapacitor\android\zebra-capacitor\libs\commons-io-2.2.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="com.android.support:appcompat-v7-27.1.1" level="project" />
-    <orderEntry type="library" name="__local_aars__:C.\Users\evanm\dev\zebraCapacitor\android\zebra-capacitor\libs\gson-2.2.2.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="__local_aars__:C.\Users\evanm\dev\northBayEnforcer\node_modules\zebra-capacitor\android\zebra-capacitor\libs\ZSDK_ANDROID_API.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="com.android.support:design-27.1.1" level="project" />
+    <orderEntry type="library" name="__local_aars__:C.\Users\evanm\dev\northBayEnforcer\node_modules\zebra-capacitor\android\zebra-capacitor\libs\snmp6_1.jar:unspecified@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="junit:junit:4.12@jar" level="project" />
     <orderEntry type="library" name="android.arch.core:common:1.1.0@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="com.android.support.test.espresso:espresso-core-3.0.1" level="project" />
@@ -130,7 +128,6 @@
     <orderEntry type="library" scope="TEST" name="com.squareup:javawriter:2.1.1@jar" level="project" />
     <orderEntry type="library" name="ionic-team:capacitor-android-1.0.0-alpha.35" level="project" />
     <orderEntry type="library" name="com.android.support:recyclerview-v7-27.1.1" level="project" />
-    <orderEntry type="library" name="__local_aars__:C.\Users\evanm\dev\zebraCapacitor\android\zebra-capacitor\libs\opencsv-2.2.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="com.android.support:customtabs-27.1.1" level="project" />
     <orderEntry type="library" scope="TEST" name="com.android.support.test:runner-1.0.1" level="project" />
     <orderEntry type="library" scope="TEST" name="com.android.support.test:rules-1.0.1" level="project" />
@@ -146,13 +143,14 @@
     <orderEntry type="library" name="android.arch.lifecycle:viewmodel-1.1.0" level="project" />
     <orderEntry type="library" scope="TEST" name="org.hamcrest:hamcrest-integration:1.3@jar" level="project" />
     <orderEntry type="library" name="android.arch.lifecycle:livedata-core-1.1.0" level="project" />
+    <orderEntry type="library" name="__local_aars__:C.\Users\evanm\dev\northBayEnforcer\node_modules\zebra-capacitor\android\zebra-capacitor\libs\gson-2.2.2.jar:unspecified@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="net.sf.kxml:kxml2:2.3.0@jar" level="project" />
     <orderEntry type="library" name="com.android.support:support-core-utils-27.1.1" level="project" />
-    <orderEntry type="library" name="__local_aars__:C.\Users\evanm\dev\zebraCapacitor\android\zebra-capacitor\libs\ZSDK_ANDROID_API.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="__local_aars__:C.\Users\evanm\dev\northBayEnforcer\node_modules\zebra-capacitor\android\zebra-capacitor\libs\opencsv-2.2.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="__local_aars__:C.\Users\evanm\dev\northBayEnforcer\node_modules\zebra-capacitor\android\zebra-capacitor\libs\commons-io-2.2.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="com.android.support:support-fragment-27.1.1" level="project" />
     <orderEntry type="library" name="com.android.support:support-media-compat-27.1.1" level="project" />
     <orderEntry type="library" name="com.android.support:support-annotations:27.1.1@jar" level="project" />
-    <orderEntry type="library" name="__local_aars__:C.\Users\evanm\dev\zebraCapacitor\android\zebra-capacitor\libs\snmp6_1.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="com.android.support:support-v4-27.1.1" level="project" />
     <orderEntry type="library" name="android.arch.core:runtime-1.1.0" level="project" />
   </component>

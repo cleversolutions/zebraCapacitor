@@ -17,6 +17,7 @@ import com.zebra.sdk.comm.BluetoothConnection;
 import com.zebra.sdk.comm.Connection;
 import com.zebra.sdk.comm.ConnectionException;
 import com.zebra.sdk.printer.PrinterLanguage;
+import com.zebra.sdk.printer.PrinterStatus;
 import com.zebra.sdk.printer.ZebraPrinter;
 import com.zebra.sdk.printer.ZebraPrinterFactory;
 import com.zebra.sdk.printer.ZebraPrinterLanguageUnknownException;
@@ -69,6 +70,32 @@ public class ZebraPlugin extends Plugin {
         ZebraPrinter printer = this.connect(address);
         JSObject ret = new JSObject();
         ret.put("success", printer != null);
+        call.success(ret);
+    }
+
+    @PluginMethod()
+    public void printerStatus(PluginCall call){
+        String address = call.getString("MACAddress");
+        JSObject ret = new JSObject();
+        if(this.macAddress == macAddress && this.isConnected()){
+            try{
+                PrinterStatus status = printer.getCurrentStatus();
+                ret.put("isReadyToPrint", status.isReadyToPrint);
+                ret.put("isPaused", status.isPaused);
+                ret.put("isReceiveBufferFull", status.isReceiveBufferFull);
+                ret.put("isRibbonOut", status.isRibbonOut);
+                ret.put("isPaperOut", status.isPaperOut);
+                ret.put("isHeadTooHot", status.isHeadTooHot);
+                ret.put("isHeadOpen", status.isHeadOpen);
+                ret.put("isHeadCold", status.isHeadCold);
+                ret.put("isPartialFormatInProgress", status.isPartialFormatInProgress);
+            }catch(Exception ex){
+                //Ignore
+            }
+            ret.put("connected", true);
+        }else{
+            ret.put("connected", false);
+        }
         call.success(ret);
     }
 
@@ -126,7 +153,6 @@ public class ZebraPlugin extends Plugin {
         printerConnection = new BluetoothConnection(macAddress);
         synchronized(ZebraPlugin.lock) {
             try {
-
                 printerConnection.open();
             }
 
