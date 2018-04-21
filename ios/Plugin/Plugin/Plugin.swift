@@ -15,7 +15,7 @@ public class ZebraCapacitor: CAPPlugin {
 //        super.init()
 //    }
     
-    var printerConnection = MfiBtPrinterConnection()
+    var printerConnection: MfiBtPrinterConnection?
     
     @objc func echo(_ call: CAPPluginCall) {
         //TODO
@@ -28,22 +28,27 @@ public class ZebraCapacitor: CAPPlugin {
     @objc func print(_ call: CAPPluginCall) {
         //TODO
         let cpcl = call.getString("cpcl") ?? ""
-        if( printerConnection.isConnected()){
+        if( isConnected()){
             let data = cpcl.data(using: .utf8)
             var error: NSError?
-            printerConnection.write(data, error:&error)
+            printerConnection!.write(data, error:&error)
             if let actualError = error{
                 call.error("An Error Occurred: \(actualError)")
             }
+        }else{
+            call.error("no printer connected")
         }
         call.success()
     }
     
     @objc func isConnected(_ call: CAPPluginCall){
-        //TODO
         call.success([
-            "connected": true
+            "connected": isConnected()
         ])
+    }
+    
+    private func isConnected() -> Bool{
+        return (printerConnection != nil && printerConnection!.isConnected())
     }
     
     @objc func printerStatus(_ call:CAPPluginCall){
@@ -69,7 +74,7 @@ public class ZebraCapacitor: CAPPlugin {
         let address = call.getString("MACAddress") ?? ""
         
         printerConnection = MfiBtPrinterConnection(serialNumber: address)
-        if(printerConnection.open()){
+        if( isConnected()){
             let printer = try? ZebraPrinterFactory.getInstance(printerConnection)
             
             if(printer == nil)
