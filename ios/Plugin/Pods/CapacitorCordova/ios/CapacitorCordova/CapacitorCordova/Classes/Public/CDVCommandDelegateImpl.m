@@ -25,12 +25,12 @@
 
 @synthesize urlTransformer;
 
-- (id)initWithWebView:(WKWebView*)webView
+- (id)initWithWebView:(WKWebView*)webView pluginManager:(CDVPluginManager *)manager
 {
     self = [super init];
     if (self != nil) {
         _webView = webView;
-
+        _manager = manager;
         NSError* err = nil;
         _callbackIdPattern = [NSRegularExpression regularExpressionWithPattern:@"[^A-Za-z0-9._-]" options:0 error:&err];
         if (err != nil) {
@@ -64,15 +64,17 @@
 
 - (void)evalJsHelper2:(NSString*)js
 {
-    [_webView evaluateJavaScript:js completionHandler:^(id obj, NSError* error) {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [_webView evaluateJavaScript:js completionHandler:^(id obj, NSError* error) {
         // TODO: obj can be something other than string
         if ([obj isKindOfClass:[NSString class]]) {
             NSString* commandsJSON = (NSString*)obj;
             if ([commandsJSON length] > 0) {
                 NSLog(@"Exec: Retrieved new exec messages by chaining.");
-            } 
+            }
         }
-    }];
+        }];
+    });
 }
 
 - (BOOL)isValidCallbackId:(NSString*)callbackId
@@ -126,7 +128,7 @@
 
 - (id)getCommandInstance:(NSString*)pluginName
 {
-    return nil;
+    return [_manager getCommandInstance:pluginName];
 }
 
 - (void)runInBackground:(void (^)())block

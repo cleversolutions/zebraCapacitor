@@ -1,5 +1,13 @@
 #import <UIKit/UIKit.h>
 
+#import <ZebraPrinterConnection.h>
+#import <ZebraPrinter.h>
+#import <ZebraPrinter.h>
+#import <ZebraPrinterFactory.h>
+#import <TcpPrinterConnection.h>
+#import <MFiBtPrinterConnection.h>
+#import <SGD.h>
+
 //! Project version number for Plugin.
 FOUNDATION_EXPORT double PluginVersionNumber;
 

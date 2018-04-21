@@ -14,9 +14,15 @@
 #import "CDVAvailability.h"
 #import "CDVCommandDelegate.h"
 #import "CDVCommandDelegateImpl.h"
+#import "CDVConfigParser.h"
 #import "CDVInvokedUrlCommand.h"
 #import "CDVPlugin.h"
+#import "CDVPluginManager.h"
 #import "CDVPluginResult.h"
+#import "CDVScreenOrientationDelegate.h"
+#import "CDVUIWebViewDelegate.h"
+#import "CDVUserAgentUtil.h"
+#import "CDVViewController.h"
 
 FOUNDATION_EXPORT double CordovaVersionNumber;
 FOUNDATION_EXPORT const unsigned char CordovaVersionString[];

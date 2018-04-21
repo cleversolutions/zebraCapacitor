@@ -22,3 +22,5 @@
 #import "CDVPluginResult.h"
 #import "CDVCommandDelegate.h"
 #import "CDVInvokedUrlCommand.h"
+#import "CDVViewController.h"
+
