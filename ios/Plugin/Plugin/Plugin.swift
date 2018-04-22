@@ -7,7 +7,7 @@ import ExternalAccessory
  * here: https://capacitor.ionicframework.com/docs/plugins/ios
  */
 @objc(ZebraCapacitor)
-public class ZebraCapacitor: CAPPlugin {
+public class ZebraPlugin: CAPPlugin {
     typealias JSObject = [String:Any]
     typealias JSArray = [JSObject]
     
@@ -15,7 +15,7 @@ public class ZebraCapacitor: CAPPlugin {
 //        super.init()
 //    }
     
-    var printerConnection: MfiBtPrinterConnection?
+    var printerConnection: ZebraPrinterConnection?
     
     @objc func echo(_ call: CAPPluginCall) {
         //TODO
@@ -75,7 +75,7 @@ public class ZebraCapacitor: CAPPlugin {
         
         printerConnection = MfiBtPrinterConnection(serialNumber: address)
         if( isConnected()){
-            let printer = try? ZebraPrinterFactory.getInstance(printerConnection)
+            let printer = try? ZebraPrinterFactory.getInstance(printerConnection as! NSObjectProtocol & ZebraPrinterConnection)
             
             if(printer == nil)
             {
