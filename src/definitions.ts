@@ -1,6 +1,6 @@
 declare global {
   interface PluginRegistry {
-    ZebraPlugin?: IZebraPlugin;
+    ZebraPlugin?: ZebraPlugin;
   }
 }
 
@@ -26,8 +26,9 @@ export interface PrinterStatus{
   isPartialFormatInProgress?: boolean;
 }
 
-export interface IZebraPlugin {
-  echo(options: {value:string}):Promise<any>
+export interface ZebraPlugin {
+  echo(options: {value:string}):Promise<any>;
+  test(): Promise<any>;
   print(options: { cpcl: string }): Promise<any>;
   isConnected(): Promise<boolean>;
   printerStatus(options: { MACAddress: string }): Promise<PrinterStatus>;

@@ -1,6 +1,6 @@
 {
   "name": "zebra-capacitor",
-  "version": "0.0.9",
+  "version": "0.0.11",
   "description": "Ionic Capacitor plugin for Zebra Printers (ios and android)",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

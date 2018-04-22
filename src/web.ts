@@ -1,14 +1,22 @@
 import { WebPlugin } from '@capacitor/core';
-import { IZebraPlugin, DiscoveryResult, PrinterStatus } from '.';
+import { ZebraPlugin, DiscoveryResult, PrinterStatus } from '.';
 
 //This is just stubbed in here for now, but as crazy as it sounds web implementation may be possible
 //https://developers.google.com/web/updates/2015/07/interact-with-ble-devices-on-the-web
-export class ZebraPluginWeb extends WebPlugin implements IZebraPlugin {
+export class ZebraPluginWeb extends WebPlugin implements ZebraPlugin {
   constructor() {
     super({
       name: 'ZebraPlugin',
       platforms: ['web']
     });
+  }
+  echo(options: {value:string}):Promise<any>{
+    console.log("ZebraPluginWeb::echo", options.value);
+    return Promise.reject("Feature not Implemented");
+  }
+  test(): Promise<any>{
+    console.log("ZebraPluginWeb::test",);
+    return Promise.reject("Feature not Implemented");
   }
   print(options: { cpcl: string }): Promise<any> {
     console.log("ZebraPluginWeb::print", options.cpcl);
@@ -36,5 +44,5 @@ export class ZebraPluginWeb extends WebPlugin implements IZebraPlugin {
   }
 }
 
-const ZebraPlugin  = new ZebraPluginWeb();
-export { ZebraPlugin  };
+// const ZebraPlugin  = new ZebraPluginWeb();
+// export { ZebraPlugin  };
