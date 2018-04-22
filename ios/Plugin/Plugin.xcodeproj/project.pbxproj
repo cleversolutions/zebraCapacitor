@@ -15,8 +15,7 @@
 		50ADFFA42020D75100D50D53 /* Capacitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50ADFFA52020D75100D50D53 /* Capacitor.framework */; };
 		50ADFFA82020EE4F00D50D53 /* Plugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 50ADFFA72020EE4F00D50D53 /* Plugin.m */; };
 		50E1A94820377CB70090CE1A /* Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E1A94720377CB70090CE1A /* Plugin.swift */; };
-		E0120260208AD07200678A2D /* lib in Resources */ = {isa = PBXBuildFile; fileRef = E012025F208AD07200678A2D /* lib */; };
-		E0133FF4208C1AFD00E15C15 /* libZSDK_API.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0982AE9208AE9F700215270 /* libZSDK_API.a */; };
+		E0133FF7208C40D400E15C15 /* libZSDK_API.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0133FF6208C408D00E15C15 /* libZSDK_API.a */; };
 		E0982AD5208AE5ED00215270 /* ZebraPrinter.h in Headers */ = {isa = PBXBuildFile; fileRef = E0982AC7208AE53C00215270 /* ZebraPrinter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E0982AD6208AE5F700215270 /* ZplPrintMode.h in Headers */ = {isa = PBXBuildFile; fileRef = E0982AC1208AE53C00215270 /* ZplPrintMode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E0982AD7208AE5F700215270 /* GraphicsUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = E0982AC2208AE53C00215270 /* GraphicsUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -64,7 +63,7 @@
 		91781294A431A2A7CC6EB714 /* Pods-Plugin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Plugin.release.xcconfig"; path = "Pods/Target Support Files/Pods-Plugin/Pods-Plugin.release.xcconfig"; sourceTree = "<group>"; };
 		96ED1B6440D6672E406C8D19 /* Pods-PluginTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PluginTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PluginTests/Pods-PluginTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E0120230208ACA4000678A2D /* libZSDK_API.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libZSDK_API.a; path = ../lib/libZSDK_API.a; sourceTree = "<group>"; };
-		E012025F208AD07200678A2D /* lib */ = {isa = PBXFileReference; lastKnownFileType = folder; path = lib; sourceTree = "<group>"; };
+		E0133FF6208C408D00E15C15 /* libZSDK_API.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libZSDK_API.a; sourceTree = "<group>"; };
 		E0982AC1208AE53C00215270 /* ZplPrintMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZplPrintMode.h; sourceTree = "<group>"; };
 		E0982AC2208AE53C00215270 /* GraphicsUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GraphicsUtil.h; sourceTree = "<group>"; };
 		E0982AC3208AE53C00215270 /* ToolsUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToolsUtil.h; sourceTree = "<group>"; };
@@ -95,7 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0133FF4208C1AFD00E15C15 /* libZSDK_API.a in Frameworks */,
+				E0133FF7208C40D400E15C15 /* libZSDK_API.a in Frameworks */,
 				50ADFFA42020D75100D50D53 /* Capacitor.framework in Frameworks */,
 				03FC29A292ACC40490383A1F /* Pods_Plugin.framework in Frameworks */,
 			);
@@ -116,7 +115,6 @@
 		50ADFF7E201F53D600D50D53 = {
 			isa = PBXGroup;
 			children = (
-				E012025F208AD07200678A2D /* lib */,
 				50ADFF8A201F53D600D50D53 /* Plugin */,
 				50ADFF95201F53D600D50D53 /* PluginTests */,
 				50ADFF89201F53D600D50D53 /* Products */,
@@ -137,6 +135,7 @@
 		50ADFF8A201F53D600D50D53 /* Plugin */ = {
 			isa = PBXGroup;
 			children = (
+				E0133FF6208C408D00E15C15 /* libZSDK_API.a */,
 				E0982AC0208AE53C00215270 /* include */,
 				50E1A94720377CB70090CE1A /* Plugin.swift */,
 				50ADFF8B201F53D600D50D53 /* Plugin.h */,
@@ -322,7 +321,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0120260208AD07200678A2D /* lib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,6 +562,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib",
+					"$(PROJECT_DIR)/Plugin",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.getcapacitor.Plugin;
@@ -595,6 +594,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib",
+					"$(PROJECT_DIR)/Plugin",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.getcapacitor.Plugin;
