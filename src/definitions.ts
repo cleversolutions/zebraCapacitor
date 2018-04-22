@@ -27,6 +27,7 @@ export interface PrinterStatus{
 }
 
 export interface IZebraPlugin {
+  echo(options: {value:string}):Promise<any>
   print(options: { cpcl: string }): Promise<any>;
   isConnected(): Promise<boolean>;
   printerStatus(options: { MACAddress: string }): Promise<PrinterStatus>;

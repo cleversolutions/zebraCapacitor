@@ -16,6 +16,7 @@
 		50ADFFA82020EE4F00D50D53 /* Plugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 50ADFFA72020EE4F00D50D53 /* Plugin.m */; };
 		50E1A94820377CB70090CE1A /* Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E1A94720377CB70090CE1A /* Plugin.swift */; };
 		E0120260208AD07200678A2D /* lib in Resources */ = {isa = PBXBuildFile; fileRef = E012025F208AD07200678A2D /* lib */; };
+		E0133FF4208C1AFD00E15C15 /* libZSDK_API.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0982AE9208AE9F700215270 /* libZSDK_API.a */; };
 		E0982AD5208AE5ED00215270 /* ZebraPrinter.h in Headers */ = {isa = PBXBuildFile; fileRef = E0982AC7208AE53C00215270 /* ZebraPrinter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E0982AD6208AE5F700215270 /* ZplPrintMode.h in Headers */ = {isa = PBXBuildFile; fileRef = E0982AC1208AE53C00215270 /* ZplPrintMode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E0982AD7208AE5F700215270 /* GraphicsUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = E0982AC2208AE53C00215270 /* GraphicsUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -36,7 +37,6 @@
 		E0982AE6208AE5F700215270 /* FormatUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = E0982AD2208AE53C00215270 /* FormatUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E0982AE7208AE5F700215270 /* TcpPrinterConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = E0982AD3208AE53C00215270 /* TcpPrinterConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E0982AE8208AE5F700215270 /* SmartCardReader.h in Headers */ = {isa = PBXBuildFile; fileRef = E0982AD4208AE53C00215270 /* SmartCardReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E0982AEA208AE9F800215270 /* libZSDK_API.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0982AE9208AE9F700215270 /* libZSDK_API.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,7 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0982AEA208AE9F800215270 /* libZSDK_API.a in Frameworks */,
+				E0133FF4208C1AFD00E15C15 /* libZSDK_API.a in Frameworks */,
 				50ADFFA42020D75100D50D53 /* Capacitor.framework in Frameworks */,
 				03FC29A292ACC40490383A1F /* Pods_Plugin.framework in Frameworks */,
 			);
@@ -555,7 +555,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				HEADER_SEARCH_PATHS = Plugin/include;
 				INFOPLIST_FILE = Plugin/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -586,7 +586,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				HEADER_SEARCH_PATHS = Plugin/include;
 				INFOPLIST_FILE = Plugin/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";

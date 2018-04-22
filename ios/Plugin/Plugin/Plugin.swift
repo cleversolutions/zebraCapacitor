@@ -6,7 +6,7 @@ import ExternalAccessory
  * Please read the Capacitor iOS Plugin Development Guide
  * here: https://capacitor.ionicframework.com/docs/plugins/ios
  */
-@objc(ZebraCapacitor)
+@objc(ZebraPlugin)
 public class ZebraPlugin: CAPPlugin {
     typealias JSObject = [String:Any]
     typealias JSArray = [JSObject]
