@@ -1,7 +1,7 @@
 
   Pod::Spec.new do |s|
     s.name = 'ZebraCapacitor'
-    s.version = '0.0.2'
+    s.version = '0.0.12'
     s.summary = 'Ionic Capacitor plugin for Zebra Printers'
     s.license = 'MIT'
     s.homepage = 'https://github.com/cleversolutions/zebraCapacitor/'
