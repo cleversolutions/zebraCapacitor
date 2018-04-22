@@ -1,5 +1,6 @@
 import XCTest
 import Capacitor
+
 @testable import Plugin
 
 class PluginTests: XCTestCase {
@@ -19,7 +20,7 @@ class PluginTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
         let value = "Hello, World!"
-        let plugin = MyPlugin()
+        let plugin = ZebraPlugin()
         
         let call = CAPPluginCall(callbackId: "test", options: [
             "value": value
@@ -31,5 +32,17 @@ class PluginTests: XCTestCase {
         })
         
         plugin.echo(call!)
+    }
+    
+    func testDiscover(){
+        let plugin = ZebraPlugin()
+        let call = CAPPluginCall(callbackId: "test",
+         success:{(result, call) in
+            let resultValue = result!.data["printers"]
+            XCTAssertNotNil(resultValue)
+            
+        }, error: { (err) in
+            XCTFail("Error shouldn't have been called")
+        })
     }
 }
