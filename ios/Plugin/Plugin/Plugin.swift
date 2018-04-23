@@ -11,9 +11,9 @@ public class ZebraPlugin: CAPPlugin {
     typealias JSObject = [String:Any]
     typealias JSArray = [JSObject]
     
-//    override init(){
-//        super.init()
-//    }
+    //    override init(){
+    //        super.init()
+    //    }
     
     var printerConnection: ZebraPrinterConnection?
     
@@ -22,7 +22,7 @@ public class ZebraPlugin: CAPPlugin {
         let value = call.getString("value") ?? ""
         call.success([
             "value": value
-        ])
+            ])
     }
     
     @objc func print(_ call: CAPPluginCall) {
@@ -44,7 +44,7 @@ public class ZebraPlugin: CAPPlugin {
     @objc func isConnected(_ call: CAPPluginCall){
         call.success([
             "connected": isConnected()
-        ])
+            ])
     }
     
     private func isConnected() -> Bool{
@@ -66,7 +66,7 @@ public class ZebraPlugin: CAPPlugin {
             "isHeadOpen": false,
             "isHeadCold": false,
             "isPartialFormatInProgress": false,
-        ])
+            ])
     }
     
     @objc func connect(_  call:CAPPluginCall){
@@ -87,7 +87,7 @@ public class ZebraPlugin: CAPPlugin {
         
         call.success([
             "success": true
-        ])
+            ])
         
     }
     
@@ -97,14 +97,14 @@ public class ZebraPlugin: CAPPlugin {
     }
     
     @objc func discover(_ call:CAPPluginCall){
-        //TODO return printers
-        let manager = EAAccessoryManager.init()
+        
+        let manager = EAAccessoryManager.shared()
         let accessories = manager.connectedAccessories
         
         var devices = JSArray()
         accessories.forEach { (accessory) in
             let name = accessory.name
-//            let ser = accessory.serialNumber
+            //            let ser = accessory.serialNumber
             var device = JSObject()
             device["name"] = name
             device["address"] = accessory.serialNumber
