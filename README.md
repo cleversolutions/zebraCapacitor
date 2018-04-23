@@ -14,3 +14,5 @@ I do intend to develop and support an app that uses this plugin, so this will ev
 THis is super hacky at the moment. Android is working okay. iOS is a hack. After installing this, you have to drag the libZSDK_API.a library into the ZebraCapacitor target of the Pods Project. Then update your build settings Library Search Paths with: "${PODS_ROOT}/../../../node_modules/zebra-capacitor/ios/Plugin/Plugin"
 
 I suspect if I mess with the podspec a bit I should be able to set this automatically.
+
+Note iOS is still very much broken, but it is at least compiling now. I have some work to do in the code now to get it going.
