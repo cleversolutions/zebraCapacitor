@@ -4,6 +4,9 @@
   "description": "Ionic Capacitor plugin for Zebra Printers (ios and android)",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "repository": {
+    "url": "https://github.com/cleversolutions/zebraCapacitor/"
+  },
   "scripts": {
     "build": "npm run clean && tsc",
     "clean": "rm -rf ./dist",
