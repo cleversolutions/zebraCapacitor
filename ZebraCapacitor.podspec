@@ -14,6 +14,7 @@
         libzsdk_api.preserve_paths = 'Plugin/include/openssl/*.h'
         libzsdk_api.vendored_libraries = 'Plugin/libZSDK_API.a'
         libzsdk_api.libraries = 'ZSDK_API'
-        libzsdk_api.xcconfig = { 'HEADER_SEARCH_PATHS' => "${PODS_ROOT}/#{s.name}/include/**" }
+        libzsdk_api.xcconfig = { 'HEADER_SEARCH_PATHS' => "${PODS_ROOT}/#{s.name}/include/**", 
+          'LIBRARY_SEARCH_PATHS' => "${PODS_ROOT}/../../../node_modules/zebra-capacitor/ios/Plugin/Plugin" }
     end
   end
