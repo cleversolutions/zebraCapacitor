@@ -18,7 +18,6 @@ import com.zebra.sdk.comm.Connection;
 import com.zebra.sdk.comm.ConnectionException;
 import com.zebra.sdk.printer.PrinterLanguage;
 import com.zebra.sdk.printer.PrinterStatus;
-import com.zebra.sdk.printer.ZebraPrinter;
 import com.zebra.sdk.printer.ZebraPrinterFactory;
 import com.zebra.sdk.printer.ZebraPrinterLanguageUnknownException;
 import com.zebra.sdk.printer.discovery.BluetoothDiscoverer;
@@ -37,9 +36,9 @@ import java.util.Map;
 import java.util.Set;
 
 @NativePlugin()
-public class ZebraPlugin extends Plugin {
+public class ZebraPrinter extends Plugin {
     private Connection printerConnection;
-    private ZebraPrinter printer;
+    private com.zebra.sdk.printer.ZebraPrinter printer;
     private String macAddress;
     static final String lock = "ZebraPluginLock";
 
@@ -67,7 +66,7 @@ public class ZebraPlugin extends Plugin {
     @PluginMethod()
     public void connect(PluginCall  call){
         String address = call.getString("MACAddress");
-        ZebraPrinter printer = this.connect(address);
+        com.zebra.sdk.printer.ZebraPrinter printer = this.connect(address);
         JSObject ret = new JSObject();
         ret.put("success", printer != null);
         call.success(ret);
@@ -146,12 +145,12 @@ public class ZebraPlugin extends Plugin {
         return printerConnection != null && printerConnection.isConnected();
     }
 
-    private ZebraPrinter connect(String macAddress) {
+    private com.zebra.sdk.printer.ZebraPrinter connect(String macAddress) {
         if( isConnected()) disconnect();
         printerConnection = null;
         this.macAddress = macAddress;
         printerConnection = new BluetoothConnection(macAddress);
-        synchronized(ZebraPlugin.lock) {
+        synchronized(ZebraPrinter.lock) {
             try {
                 printerConnection.open();
             }
@@ -181,7 +180,7 @@ public class ZebraPlugin extends Plugin {
     }
 
     private void disconnect() {
-        synchronized (ZebraPlugin.lock) {
+        synchronized (ZebraPrinter.lock) {
             try {
                 if (printerConnection != null) {
                     printerConnection.close();

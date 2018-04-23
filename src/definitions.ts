@@ -1,6 +1,6 @@
 declare global {
   interface PluginRegistry {
-    ZebraPlugin?: ZebraPlugin;
+    ZebraPrinter?: ZebraPlugin;
   }
 }
 

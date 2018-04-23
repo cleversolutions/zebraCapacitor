@@ -6,7 +6,7 @@ import { ZebraPlugin, DiscoveryResult, PrinterStatus } from '.';
 export class ZebraPluginWeb extends WebPlugin implements ZebraPlugin {
   constructor() {
     super({
-      name: 'ZebraPlugin',
+      name: 'ZebraPrinter',
       platforms: ['web']
     });
   }
@@ -44,5 +44,5 @@ export class ZebraPluginWeb extends WebPlugin implements ZebraPlugin {
   }
 }
 
-// const ZebraPlugin  = new ZebraPluginWeb();
-// export { ZebraPlugin  };
+const ZebraPrinter  = new ZebraPluginWeb();
+export { ZebraPrinter };
