@@ -109,6 +109,9 @@ public class ZebraPlugin: CAPPlugin {
             var device = JSObject()
             device["name"] = name
             device["address"] = accessory.serialNumber
+            device["manufacturer"] = accessory.manufacturer
+            device["modelNumber"] = accessory.modelNumber
+            device["connected"] = accessory.isConnected
             devices.append(device)
         }
         
