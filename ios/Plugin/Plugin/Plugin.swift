@@ -74,6 +74,7 @@ public class ZebraPlugin: CAPPlugin {
         let address = call.getString("MACAddress") ?? ""
         
         printerConnection = MfiBtPrinterConnection(serialNumber: address)
+        printerConnection?.open()
         if( isConnected()){
             let printer = try? ZebraPrinterFactory.getInstance(printerConnection as! NSObjectProtocol & ZebraPrinterConnection)
             

@@ -16,3 +16,13 @@ THis is super hacky at the moment. Android is working okay. iOS is a hack. After
 I suspect if I mess with the podspec a bit I should be able to set this automatically.
 
 Note iOS is still very much broken, but it is at least compiling now. I have some work to do in the code now to get it going.
+
+Okay also for iOS update your apps Info.plist file with Supported external accessory protocols as an array with the value com.zebra.rawport
+
+Add this to your plist
+```
+<key>UISupportedExternalAccessoryProtocols</key>
+<array>
+    <string>com.zebra.rawport</string>
+</array>
+```
