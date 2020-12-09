@@ -1,25 +1,37 @@
 {
   "name": "zebra-capacitor",
-  "version": "0.0.16",
-  "description": "Ionic Capacitor plugin for Zebra Printers (ios and android). Still under early development.",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "repository": {
-    "url": "https://github.com/cleversolutions/zebraCapacitor/"
-  },
+  "version": "0.1.0",
+  "description": "Capacitor plugin for Zebra Printers",
+  "main": "dist/plugin.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
   "scripts": {
-    "build": "npm run clean && tsc",
-    "clean": "rm -rf ./dist",
+    "lint": "npm run prettier -- --check && npm run swiftlint -- lint",
+    "prettier": "prettier \"**/*.{css,html,ts,js,java}\"",
+    "swiftlint": "node-swiftlint",
+    "build": "npm run clean && tsc && rollup -c rollup.config.js",
+    "clean": "rimraf ./dist",
     "watch": "tsc --watch",
     "prepublishOnly": "npm run build"
   },
   "author": "Evan Moore",
   "license": "MIT",
-  "dependencies": {
-    "@capacitor/core": "latest"
-  },
   "devDependencies": {
-    "typescript": "^2.6.2"
+    "@capacitor/android": "^2.4.4",
+    "@capacitor/core": "^2.4.4",
+    "@capacitor/ios": "^2.4.4",
+    "@ionic/prettier-config": "^1.0.0",
+    "@ionic/swiftlint-config": "^1.0.0",
+    "@rollup/plugin-node-resolve": "^8.1.0",
+    "prettier": "^2.0.5",
+    "prettier-plugin-java": "^0.8.0",
+    "rimraf": "^3.0.0",
+    "rollup": "^2.21.0",
+    "swiftlint": "^1.0.1",
+    "typescript": "~3.8.3"
+  },
+  "peerDependencies": {
+    "@capacitor/core": "^2.4.4"
   },
   "files": [
     "dist/",
@@ -39,5 +51,14 @@
     "android": {
       "src": "android"
     }
+  },
+  "prettier": "@ionic/prettier-config",
+  "swiftlint": "@ionic/swiftlint-config",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cleversolutions/zebraCapacitor/"
+  },
+  "bugs": {
+    "url": "https://github.com/cleversolutions/zebraCapacitor//issues"
   }
 }

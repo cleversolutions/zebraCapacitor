@@ -1,48 +1,106 @@
 import { WebPlugin } from '@capacitor/core';
-import { ZebraPlugin, DiscoveryResult, PrinterStatus } from '.';
+import { ZebraDiscoveryResult, ZebraPrinterStatus, ZebraCapacitorPlugin } from './definitions';
 
-//This is just stubbed in here for now, but as crazy as it sounds web implementation may be possible
-//https://developers.google.com/web/updates/2015/07/interact-with-ble-devices-on-the-web
-export class ZebraPluginWeb extends WebPlugin implements ZebraPlugin {
+export class ZebraCapacitorWeb extends WebPlugin implements ZebraCapacitorPlugin {
+  private printers = [
+    {
+      name: 'Test Printer 1',
+      address: 'A1B2C3D4E5F607',
+      manufacturer: 'TEST',
+      modelNumber: 'TEST-1234',
+      connected: false
+    },
+    {
+      name: 'Test Printer 2',
+      address: 'A1B2C3D4E5F608',
+      manufacturer: 'TEST',
+      modelNumber: 'TEST-1234',
+      connected: false
+    }
+  ];
+  private connectedPrinter: any = null;
+
   constructor() {
     super({
-      name: 'ZebraPrinter',
-      platforms: ['web']
+      name: 'ZebraCapacitor',
+      platforms: ['web'],
     });
   }
-  echo(options: {value:string}):Promise<any>{
-    console.log("ZebraPluginWeb::echo", options.value);
-    return Promise.reject("Feature not Implemented");
+
+  async echo(options: { value: string }): Promise<{ value: string }> {
+    console.log('ECHO', options);
+    return options;
   }
-  test(): Promise<any>{
-    console.log("ZebraPluginWeb::test",);
-    return Promise.reject("Feature not Implemented");
-  }
-  print(options: { cpcl: string }): Promise<any> {
-    console.log("ZebraPluginWeb::print", options.cpcl);
-    return Promise.reject("Feature not Implemented");
-  }
-  isConnected(): Promise<boolean> {
-    console.log("ZebraPluginWeb::isConnected");
-    return Promise.reject("Feature not Implemented");
-  }
-  printerStatus(options: { MACAddress: string }): Promise<PrinterStatus>{
-    console.log("ZebraPluginWeb::printerStatus", options.MACAddress);
-    return Promise.reject("Feature not Implemented");
-  }
-  connect(options: { MACAddress: string }): Promise<any> {
-    console.log("ZebraPluginWeb::connect", options.MACAddress);
-    return Promise.reject("Feature not Implemented");
-  }
-  disconnect(): Promise<boolean> {
-    console.log("ZebraPluginWeb::disconnect");
-    return Promise.reject("Feature not Implemented");
-  }
-  discover(): Promise<DiscoveryResult> {
+
+  async discover(): Promise<ZebraDiscoveryResult> {
     console.log("ZebraPluginWeb::discover");
-    return Promise.reject("Feature not Implemented");
+    return {
+      printers: this.printers
+    };
   }
+
+  async printerStatus(): Promise<ZebraPrinterStatus> {
+    console.log("ZebraPluginWeb::printerStatus");
+    return new Promise(resolve => setTimeout(() => {
+      let status = {
+        connected: false,
+        isReadyToPrint: false,
+        isPaused: false,
+        isReceiveBufferFull: false,
+        isRibbonOut: false,
+        isPaperOut: false,
+        isHeadTooHot: false,
+        isHeadOpen: false,
+        isHeadCold: false,
+        isPartialFormatInProgress: false
+      };
+      if (this.connectedPrinter != null) {
+        status.connected = true;
+        status.isReadyToPrint = true;
+      }
+      resolve(status);
+      return status;
+    }, 500));
+  }
+
+  async print(options: { cpcl: string }): Promise<any> {
+    console.log("ZebraPluginWeb::print", options.cpcl);
+    return new Promise(resolve => setTimeout(() => {
+      resolve(true);
+    }, 1000));
+  }
+
+  async isConnected(): Promise<boolean> {
+    console.log("ZebraPluginWeb::isConnected");
+    return this.connectedPrinter != null;
+  }
+
+  async connect(options: { MACAddress: string }): Promise<boolean> {
+    console.log("ZebraPluginWeb::connect", options.MACAddress);
+
+    return new Promise(resolve => setTimeout(() => {
+      const printer = this.printers.find(p => p.address == options.MACAddress);
+      if (printer != null) {
+        printer.connected = true;
+        this.connectedPrinter = printer;
+        resolve(true);
+        return true
+      };
+      resolve(false);
+      return false;
+    }, 1000));
+  }
+
+  async disconnect(): Promise<boolean> {
+    console.log("ZebraPluginWeb::disconnect");
+    return true;
+  }
+
 }
 
-const ZebraPrinter  = new ZebraPluginWeb();
-export { ZebraPrinter };
+const ZebraCapacitor = new ZebraCapacitorWeb();
+
+export { ZebraCapacitor };
+
+import { registerWebPlugin } from '@capacitor/core';
+registerWebPlugin(ZebraCapacitor);

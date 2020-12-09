@@ -1,19 +1,22 @@
-declare global {
+declare module '@capacitor/core' {
   interface PluginRegistry {
-    ZebraPrinter?: ZebraPlugin;
+    ZebraCapacitor: ZebraCapacitorPlugin;
   }
 }
 
-export interface Printer {
+export interface ZebraPrinter {
   name: string;
   address: string;
+  manufacturer: string;
+  modelNumber: string;
+  connected: boolean;
 }
 
-export interface DiscoveryResult {
-  printers: Array<Printer>;
+export interface ZebraDiscoveryResult {
+  printers: Array<ZebraPrinter>;
 }
 
-export interface PrinterStatus{
+export interface ZebraPrinterStatus{
   connected:boolean;
   isReadyToPrint?: boolean;
   isPaused?: boolean;
@@ -26,13 +29,13 @@ export interface PrinterStatus{
   isPartialFormatInProgress?: boolean;
 }
 
-export interface ZebraPlugin {
-  echo(options: {value:string}):Promise<any>;
-  test(): Promise<any>;
+export interface ZebraCapacitorPlugin {
+  echo(options: { value: string }): Promise<{ value: string }>;
+  
+  discover(): Promise<ZebraDiscoveryResult>;
+  printerStatus(): Promise<ZebraPrinterStatus>;
   print(options: { cpcl: string }): Promise<any>;
   isConnected(): Promise<boolean>;
-  printerStatus(options: { MACAddress: string }): Promise<PrinterStatus>;
   connect(options: { MACAddress: string }): Promise<boolean>;
   disconnect(): Promise<boolean>;
-  discover(): Promise<DiscoveryResult>;
 }
