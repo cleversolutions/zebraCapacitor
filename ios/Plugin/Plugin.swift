@@ -4,8 +4,8 @@ import Capacitor
 /**
  * Capacitor Plugin for Zebra Thermal Printers
  */
-@objc(ZebraCapacitor)
-public class ZebraCapacitor: CAPPlugin {
+@objc(ZebraCapacitorPlugin)
+public class ZebraCapacitorPlugin: CAPPlugin {
 
     var printerConnection: ZebraPrinterConnection?
     var printer: ZebraPrinter?
@@ -110,7 +110,7 @@ public class ZebraCapacitor: CAPPlugin {
      */
     @objc func print(_ call:CAPPluginCall) {
         DispatchQueue.global(qos: .background).async {
-            let cpcl = command.arguments[0] as? String ?? ""
+            let cpcl = call.getString("cpcl") ?? ""
             if( self.isConnected()){
                 let data = cpcl.data(using: .utf8)
                 var error: NSError?
@@ -158,7 +158,7 @@ public class ZebraCapacitor: CAPPlugin {
      */
     @objc func connect(_  call:CAPPluginCall){
         DispatchQueue.global(qos: .background).async {
-            let address = command.arguments[0] as? String ?? ""
+            let address = call.getString("MACAddress") ?? ""
             if(address == ""){
                 NSLog("ZebraPrinter:: empty printer address")
                 call.reject("Invalid Address")

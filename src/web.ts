@@ -1,7 +1,7 @@
 import { WebPlugin } from '@capacitor/core';
-import { ZebraDiscoveryResult, ZebraPrinterStatus, ZebraCapacitorPlugin } from './definitions';
+import { ZebraDiscoveryResult, ZebraPrinterStatus, ZebraCapacitorPluginInterface } from './definitions';
 
-export class ZebraCapacitorWeb extends WebPlugin implements ZebraCapacitorPlugin {
+export class ZebraCapacitorPluginWeb extends WebPlugin implements ZebraCapacitorPluginInterface {
   private printers = [
     {
       name: 'Test Printer 1',
@@ -98,9 +98,9 @@ export class ZebraCapacitorWeb extends WebPlugin implements ZebraCapacitorPlugin
 
 }
 
-const ZebraCapacitor = new ZebraCapacitorWeb();
+const ZebraCapacitorPlugin = new ZebraCapacitorPluginWeb();
 
-export { ZebraCapacitor };
+export { ZebraCapacitorPlugin };
 
 import { registerWebPlugin } from '@capacitor/core';
-registerWebPlugin(ZebraCapacitor);
+registerWebPlugin(ZebraCapacitorPlugin);

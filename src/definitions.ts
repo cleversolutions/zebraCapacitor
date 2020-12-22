@@ -1,6 +1,6 @@
 declare module '@capacitor/core' {
   interface PluginRegistry {
-    ZebraCapacitor: ZebraCapacitorPlugin;
+    ZebraCapacitorPlugin: ZebraCapacitorPluginInterface;
   }
 }
 
@@ -29,7 +29,7 @@ export interface ZebraPrinterStatus{
   isPartialFormatInProgress?: boolean;
 }
 
-export interface ZebraCapacitorPlugin {
+export interface ZebraCapacitorPluginInterface {
   echo(options: { value: string }): Promise<{ value: string }>;
   
   discover(): Promise<ZebraDiscoveryResult>;
