@@ -22,7 +22,7 @@ export class ZebraCapacitorPluginWeb extends WebPlugin implements ZebraCapacitor
 
   constructor() {
     super({
-      name: 'ZebraCapacitor',
+      name: 'ZebraCapacitorPlugin',
       platforms: ['web'],
     });
   }

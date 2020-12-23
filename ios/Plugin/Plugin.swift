@@ -12,6 +12,7 @@ public class ZebraCapacitorPlugin: CAPPlugin {
 
     @objc func echo(_ call: CAPPluginCall) {
         let value = call.getString("value") ?? ""
+        NSLog(value)
         call.resolve([
             "value": value
         ])
@@ -22,12 +23,13 @@ public class ZebraCapacitorPlugin: CAPPlugin {
      *
      */
     @objc func discover(_ call:CAPPluginCall){
-        DispatchQueue.global(qos: .background).async {
-            let manager = EAAccessoryManager.shared()
-            let accessories = manager.connectedAccessories
-            
-            var devices = [Any]()
-            accessories.forEach { (accessory) in
+        let manager = EAAccessoryManager.shared()
+        let accessories = manager.connectedAccessories
+        
+        var devices = [Any]()
+        
+        for accessory in accessories{
+            if accessory.protocolStrings.contains("com.zebra.rawport"){
                 let name = accessory.name
                 var device = [String: Any]()
                 device["name"] = name
@@ -37,9 +39,19 @@ public class ZebraCapacitorPlugin: CAPPlugin {
                 device["connected"] = accessory.isConnected
                 devices.append(device)
             }
-            
-            call.resolve(["printers": devices])
         }
+//        accessories.forEach { (accessory) in
+//            let name = accessory.name
+//            var device = [String: Any]()
+//            device["name"] = name
+//            device["address"] = accessory.serialNumber
+//            device["manufacturer"] = accessory.manufacturer
+//            device["modelNumber"] = accessory.modelNumber
+//            device["connected"] = accessory.isConnected
+//            devices.append(device)
+//        }
+//
+        call.resolve(["printers": devices])
     }
 
     /**
