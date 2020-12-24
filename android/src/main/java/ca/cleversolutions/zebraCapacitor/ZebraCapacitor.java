@@ -1,5 +1,6 @@
-package ca.cleversolutions.zebra-capacitor;
+package ca.cleversolutions.zebraCapacitor;
 
+import com.getcapacitor.JSArray;
 import com.getcapacitor.JSObject;
 import com.getcapacitor.NativePlugin;
 import com.getcapacitor.Plugin;
@@ -162,7 +163,7 @@ public class ZebraCapacitor extends Plugin {
         printerConnection = null;
         this.macAddress = macAddress;
         printerConnection = new BluetoothConnection(macAddress);
-        synchronized(ZebraPrinter.lock) {
+        synchronized(ZebraCapacitor.lock) {
             try {
                 printerConnection.open();
             }
@@ -192,7 +193,7 @@ public class ZebraCapacitor extends Plugin {
     }
 
     private void disconnect() {
-        synchronized (ZebraPrinter.lock) {
+        synchronized (ZebraCapacitor.lock) {
             try {
                 if (printerConnection != null) {
                     printerConnection.close();

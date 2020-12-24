@@ -1,5 +1,7 @@
 
   <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="ca.cleversolutions.zebra-capacitor.zebracapacitor">
+      package="ca.cleversolutions.zebraCapacitor.zebracapacitor">
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
   </manifest>
   
