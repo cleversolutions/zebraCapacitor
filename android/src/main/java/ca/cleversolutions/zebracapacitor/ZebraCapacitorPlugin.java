@@ -1,4 +1,4 @@
-package ca.cleversolutions.zebraCapacitor;
+package ca.cleversolutions.zebracapacitor;
 
 import com.getcapacitor.JSArray;
 import com.getcapacitor.JSObject;
@@ -8,7 +8,6 @@ import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 
 import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.BluetoothClass;
 import android.bluetooth.BluetoothDevice;
 import android.util.Log;
 import android.content.Context;
@@ -25,7 +24,6 @@ import com.zebra.sdk.printer.discovery.DiscoveredPrinter;
 import com.zebra.sdk.printer.discovery.DiscoveredPrinterBluetooth;
 import com.zebra.sdk.printer.discovery.DiscoveryHandler;
 
-import org.json.JSONObject;
 import org.json.JSONArray;
 
 import java.util.Iterator;
