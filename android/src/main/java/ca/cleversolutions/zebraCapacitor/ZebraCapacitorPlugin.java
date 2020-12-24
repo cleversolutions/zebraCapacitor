@@ -163,7 +163,7 @@ public class ZebraCapacitorPlugin extends Plugin {
         printerConnection = null;
         this.macAddress = macAddress;
         printerConnection = new BluetoothConnection(macAddress);
-        synchronized(ZebraCapacitor.lock) {
+        synchronized(ZebraCapacitorPlugin.lock) {
             try {
                 printerConnection.open();
             }
@@ -193,7 +193,7 @@ public class ZebraCapacitorPlugin extends Plugin {
     }
 
     private void disconnect() {
-        synchronized (ZebraCapacitor.lock) {
+        synchronized (ZebraCapacitorPlugin.lock) {
             try {
                 if (printerConnection != null) {
                     printerConnection.close();
