@@ -36,7 +36,7 @@ import java.util.Map;
 import java.util.Set;
 
 @NativePlugin
-public class ZebraCapacitor extends Plugin {
+public class ZebraCapacitorPlugin extends Plugin {
     private Connection printerConnection;
     private com.zebra.sdk.printer.ZebraPrinter printer;
     private String macAddress;
