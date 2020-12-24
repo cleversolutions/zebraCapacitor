@@ -2,7 +2,7 @@
 Capacitor plugin for Zebra printers (ios and android)
 
 ## Limitations
-None of version 0.1.0 has been tested on real hardware yet.
+None of version 0.1.0 has been tested on real hardware yet. iOS has been tested on device, but with no printer. Android has had no testing.
 
 ## But
 I do intend to develop and support an app that uses this plugin, so this will eventually be completed and working (at least with for the printers I have access to test with).
