@@ -82,6 +82,13 @@ export class ZebraCapacitorPluginWeb extends WebPlugin implements ZebraCapacitor
       const printer = this.printers.find(p => p.address == options.MACAddress);
       if (printer != null) {
         printer.connected = true;
+
+        // if we were previously connected to a printer, mark it as not connected
+        if(this.connectedPrinter){
+          this.connectedPrinter.connected = false;
+        }
+
+        // set our connectPrinter to this one
         this.connectedPrinter = printer;
         resolve(true);
         return true
