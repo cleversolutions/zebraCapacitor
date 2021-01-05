@@ -22,3 +22,29 @@ Add this to your plist
 ```
 
 I'll experiment with trying to automate this via the podspec as well.
+
+## Android
+Add the following to your AndroidManifest.xml
+```
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+```
+
+and register the plugin in your MainActivity.java for example:
+```
+import ca.cleversolutions.zebracapacitor.ZebraCapacitorPlugin;
+...
+public class MainActivity extends BridgeActivity {
+  @Override
+  public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+
+    // Initializes the Bridge
+    this.init(savedInstanceState, new ArrayList<Class<? extends Plugin>>() {{
+      // Additional plugins you've installed go here
+      // Ex: add(TotallyAwesomePlugin.class);
+      add(ZebraCapacitorPlugin.class);
+    }});
+  }
+}
+```
