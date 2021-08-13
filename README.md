@@ -2,7 +2,7 @@
 Capacitor plugin for Zebra printers (ios and android)
 
 ## Limitations
-None of version 0.1.0 has been tested on real hardware yet. iOS has been tested on device, but with no printer. Android has had no testing.
+None of version 0.1.0 has been tested on real hardware yet. iOS has been tested on device, but with no printer. Android has had no testing. This works with bluetooth printers only.
 
 ## But
 I do intend to develop and support an app that uses this plugin, so this will eventually be completed and working (at least with for the printers I have access to test with).
@@ -48,3 +48,6 @@ public class MainActivity extends BridgeActivity {
   }
 }
 ```
+
+### Printers Known To Work
+I'll maintain a list of printer models that are known to work as I or other community members test this on real hardware. If you have used this successfully, please open an issue letting me know what printer model you have tested it on. 
