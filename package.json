@@ -23,10 +23,10 @@
     "@ionic/prettier-config": "^1.0.0",
     "@ionic/swiftlint-config": "^1.0.0",
     "@rollup/plugin-node-resolve": "^8.1.0",
-    "prettier": "^2.0.5",
-    "prettier-plugin-java": "^0.8.0",
+    "prettier": "^2.5.1",
+    "prettier-plugin-java": "^1.6.0",
     "rimraf": "^3.0.0",
-    "rollup": "^2.35.1",
+    "rollup": "^2.60.2",
     "swiftlint": "^1.0.1",
     "typescript": "~3.8.3"
   },
