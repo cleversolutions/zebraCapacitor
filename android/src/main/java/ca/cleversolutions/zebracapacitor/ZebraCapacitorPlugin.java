@@ -40,10 +40,6 @@ public class ZebraCapacitorPlugin extends Plugin {
     private String macAddress;
     static final String lock = "ZebraPluginLock";
 
-    // 
-    //  NOTE: This is the old Cap Code, still need to merge changes from the Cordova Branch
-    // 
-
     @PluginMethod
     public void echo(PluginCall call) {
         String value = call.getString("value");

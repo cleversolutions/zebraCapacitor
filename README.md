@@ -1,11 +1,12 @@
 # zebraCapacitor
-Capacitor plugin for Zebra printers (ios and android)
+Capacitor (v2.0) plugin for Zebra printers (ios and android)
 
 ## Limitations
-None of version 0.1.0 has been tested on real hardware yet. iOS has been tested on device, but with no printer. Android has had no testing.
+iOS has been tested on device with a real printer. Android has had no testing yet. I had access to printers at my previous employer; however, I have recently moved on. I can test on real hardware if somone is able to loan me with hardware to test on :) 
 
-## But
-I do intend to develop and support an app that uses this plugin, so this will eventually be completed and working (at least with for the printers I have access to test with).
+This is all a port of a plugin I built for Cordova (which was well tested), so I'm reasonably sure it should all work.
+
+I had plans to port this to Capacitor 3, and still may, but my time is quite limited at the moment.
 
 ## iOS
 After installing this, you may have to drag the libZSDK_API.a library into the ZebraCapacitor target of the Pods Project. Then update your build settings Library Search Paths with: "${PODS_ROOT}/../../../node_modules/zebra-capacitor/ios/Plugin/Plugin"
@@ -21,7 +22,7 @@ Add this to your plist
 </array>
 ```
 
-I'll experiment with trying to automate this via the podspec as well.
+I'll experiment with trying to automate this via the podspec as well. If anybody can help with this, please submit a PR :)
 
 ## Android
 Add the following to your AndroidManifest.xml

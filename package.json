@@ -1,6 +1,6 @@
 {
   "name": "zebra-capacitor",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Capacitor plugin for Zebra Printers",
   "main": "dist/plugin.js",
   "module": "dist/esm/index.js",
@@ -17,9 +17,9 @@
   "author": "Evan Moore",
   "license": "MIT",
   "devDependencies": {
-    "@capacitor/android": "^2.4.5",
-    "@capacitor/core": "^2.4.5",
-    "@capacitor/ios": "^2.4.5",
+    "@capacitor/android": "^2.5.0",
+    "@capacitor/core": "^2.5.0",
+    "@capacitor/ios": "^2.5.0",
     "@ionic/prettier-config": "^1.0.0",
     "@ionic/swiftlint-config": "^1.0.0",
     "@rollup/plugin-node-resolve": "^8.1.0",
